@@ -1,8 +1,8 @@
 import cv2
 from ultralytics import YOLO
 
-model = YOLO('yolov8n.pt')  # Initialize
-model = YOLO('best.pt')     # Load custom model
+model = YOLO('yolov8s.pt')  # Initialize
+model = YOLO('best (7).pt')     # Load custom model
 model.to('cuda')            # Use GPU 
 model.names['2'] = 'staff'  # Add Staff to the class names
 
@@ -76,4 +76,4 @@ def detect(video_path,conf=0.25):
 
 if __name__ == '__main__':
     # Fill the video path and confidence score
-    detect('sample.mp4',conf=0.5)
+    detect('sample.mp4',conf=0.4)
