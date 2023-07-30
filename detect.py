@@ -2,14 +2,14 @@ import cv2
 from ultralytics import YOLO
 
 model = YOLO('yolov8s.pt')  # Initialize
-model = YOLO('best (7).pt')     # Load custom model
+model = YOLO('best.pt')     # Load custom model
 model.to('cuda')            # Use GPU 
 model.names['2'] = 'staff'  # Add Staff to the class names
 
 def detect(video_path,conf=0.25):
     # Initialize video file and confidence score
     video_path = video_path
-    conf=conf
+    conf = conf
     
     cap = cv2.VideoCapture(video_path)
     if cap.isOpened() == False:
